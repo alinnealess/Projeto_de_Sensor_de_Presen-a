@@ -44,8 +44,6 @@ void setup() {
   WiFi.begin(wifi_ssid, wifi_password);
   connectWiFi();
   mqtt_client.setServer(mqtt_broker, mqtt_port);
-
-  
 }
 
 
@@ -85,6 +83,14 @@ void loop() {
   }
 
   delay(10000); // Atraso entre as medições
+}
+
+  // Verificar a conexão com a Internet e atualizar o status do LED
+  if (WiFi.status() == WL_CONNECTED) {
+    digitalWrite(statusLedPin, HIGH); // Ligado quando conectado
+  } else {
+    digitalWrite(statusLedPin, LOW); // Desligado quando não conectado
+  }
 }
 
  // Conexão à rede Wi-Fi
