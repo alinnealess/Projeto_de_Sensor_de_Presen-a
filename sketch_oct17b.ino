@@ -30,6 +30,7 @@ const char* mqtt_broker = "io.adafruit.com"; //endereço do broker MQTT ao qual 
 const int mqtt_port = 1883; //porta na qual o broker MQTT está escutando
 const char* mqtt_usernameAdafruitIO = "XXXXXXXXXX"; // usuário do Adafruit IO
 const char* mqtt_keyAdafruitIO = "XXXXXXXXXXXXXX"; // chave de API do Adafruit IO
+const int statusLedPin = 2; //pino 2 como indicador do status da conexão
 
 //chamada quando o ESP32 é iniciado. 
 //Esta função configura os pinos digitais como pinos de saída e entrada, conecta-se à rede Wi-Fi e ao broker MQTT.
@@ -38,6 +39,9 @@ void setup() {
   pinMode(echoPinS1, INPUT);
   pinMode(trigPinS2, OUTPUT);
   pinMode(echoPinS2, INPUT);
+  pinMode(statusLedPin, OUTPUT); // Configurar o pino do LED como saída
+  digitalWrite(statusLedPin, LOW); // Desligar o LED no início
+  
   Serial.begin(115200);
 
   WiFi.mode(WIFI_STA);
@@ -77,8 +81,6 @@ void loop() {
     // Enviar leituras ao Adafruit IO
     mqtt_client.publish("alinnealess/feeds/sensorS1", String(distanciaCmS1).c_str());
     mqtt_client.publish("alinnealess/feeds/sensorS2", String(distanciaCmS2).c_str());
-
-
     mqtt_client.loop();
   }
 
