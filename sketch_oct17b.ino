@@ -83,16 +83,15 @@ void loop() {
     mqtt_client.publish("alinnealess/feeds/sensorS2", String(distanciaCmS2).c_str());
     mqtt_client.loop();
   }
-
+    // Verificar a conexão com a Internet e atualizar o status do LED
+      if (WiFi.status() == WL_CONNECTED) {
+        digitalWrite(statusLedPin, HIGH); // Ligado quando conectado
+      } else {
+        digitalWrite(statusLedPin, LOW); // Desligado quando não conectado
+      }
   delay(10000); // Atraso entre as medições
 }
 
-  // Verificar a conexão com a Internet e atualizar o status do LED
-  if (WiFi.status() == WL_CONNECTED) {
-    digitalWrite(statusLedPin, HIGH); // Ligado quando conectado
-  } else {
-    digitalWrite(statusLedPin, LOW); // Desligado quando não conectado
-  }
 }
 
  // Conexão à rede Wi-Fi
