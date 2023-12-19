@@ -1,7 +1,4 @@
-# Projeto_de_Sensor_de_Presenca
-
-
-#Projeto de IoT - Medição de Distância com ESP32 e Sensores HC-SR04 para Adafruit IO
+# Projeto de IoT - Medição de Distância com ESP32 e Sensores HC-SR04 para Adafruit IO
 Este projeto implementa um sistema de Internet das Coisas (IoT) usando um microcontrolador ESP32 para medir a distância com dois sensores de ultrassom HC-SR04 e publicar os dados no serviço Adafruit IO por meio do protocolo MQTT.
 
 ## Componentes Necessários:
