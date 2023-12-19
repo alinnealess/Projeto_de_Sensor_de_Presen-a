@@ -35,7 +35,7 @@ Este projeto implementa um sistema de Internet das Coisas (IoT) usando um microc
 ## Avisos:
 Mantenha as credenciais (Wi-Fi, Adafruit IO) seguras e não as compartilhe publicamente.
 Certifique-se de que os sensores HC-SR04 estejam corretamente conectados.
-##Contribuição e Licença:
+## Contribuição e Licença:
 Sinta-se à vontade para contribuir, relatar problemas ou fazer melhorias neste projeto. O código está sob a Licença MIT.
 
 ## Autor:
